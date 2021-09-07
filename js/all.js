@@ -171,7 +171,7 @@ function delList(e) {
 
 // 交替顯示按鈕
 function btnChange(e) {
-    e.preventDefault();
+    
     if (ChangeNum == 0) {
         document.querySelector('.btn').style.display = 'none';
         document.querySelector('.open-btn-border').style.display = 'block';
@@ -180,11 +180,12 @@ function btnChange(e) {
         height.value = '';
         weight.value = '';
     }else if (ChangeNum == 1) {
+        e.preventDefault();
         document.querySelector('.state').style.opacity = '0';
         document.querySelector('.open-btn-border').style.display = 'none';
         document.querySelector('.btn').style.display = 'block';
         
         ChangeNum = 0;
     }
-
 }
+
