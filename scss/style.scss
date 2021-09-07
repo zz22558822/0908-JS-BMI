@@ -1,0 +1,379 @@
+@import 'reset';
+@import './mixin/text-hidden';
+@import './mixin/RWD';
+@import url(//db.onlinewebfonts.com/c/344d17417b87d35e88d9df15bea12e2e?family=SFNSDisplay);
+@font-face {font-family: "SFNSDisplay"; src: url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.eot"); src: url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.woff") format("woff"), url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.svg#SFNSDisplay") format("svg"); }
+
+$span-color : #424242;
+$all-color : #FFD366;
+$green : #86D73F;
+$blue: #31BAF9;
+$orange : #FF982D;
+$orange2 : #FF6C02;
+$red : #FF1200;
+$yellow : #FFD366;
+
+
+
+
+
+
+
+
+
+
+/* 隱藏imput箭頭 */
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+
+
+
+.wrap{
+    max-width: 1024px;
+    margin: 0 auto;
+    font-family: "SFNSDisplay";
+    a{
+        text-decoration: none;
+    }
+}
+.header{
+    background: $span-color;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 70px;
+    flex-wrap: wrap;
+    @include mobile-914{
+        padding: 20px;
+    }
+    h1{
+        margin: auto 10%;
+        @include mobile-767{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        @include mobile-914{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        a{
+            width: 117px;
+            height: 117px;
+            background: url('../images/BMICLogo.png'); 
+            @include text-hidden;
+        }
+    }
+
+    .count-text{
+        display: flex;
+        flex-direction: column;
+        @include mobile-914{
+            width: 70%;
+        }
+        @include mobile-767{
+            margin-bottom: 10px;
+        }
+        label{
+            font-size: 18px;
+            color: $yellow;
+            margin-bottom: 7px;
+        }
+        input{
+            background: rgba(255,255,255,0.18);
+            border: 2px solid #FFD366;
+            border-radius: 10px;
+            font-size: 24px;
+            width: 250px;
+            outline:none;
+            padding: 5px 15px;
+            margin-bottom: 15px;
+            color: #FFF;
+            @include mobile-914{
+                width: 100%;
+            }
+        }
+    }
+
+    .result{
+        display: flex;
+        @include mobile-914{
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn{
+            width: 120px;
+            height: 120px;
+            display: block;
+            text-align: center;
+            line-height: 120px;
+            border-radius: 100%;
+            background: $yellow;
+            color: $span-color;
+            font-size: 24px;
+            transition: all 0.3s;
+            &:hover{
+                box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64);
+            }
+            @include mobile-767{
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        .open-btn-border{
+            position: relative;
+            display: none;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            transition: all 0.3s;
+            text-align: center;
+            .BMI{
+                font-size: 32px;
+                padding-top: 30px;
+                padding-bottom: 5px;
+            }
+            .BMI-text{
+                font-size: 14px;
+            }
+            .open-btn{
+                padding: 8px;
+                position: absolute;
+                bottom: -6%;
+                right: 3%;
+                border-radius: 50%;
+                transition: all 0.3s;
+                .fas.fa-sync-alt{
+                    
+                    color: $span-color;
+                    &:hover{
+                        transform: rotate(180deg);
+                        transition: all 0.3s;
+                    }
+                }
+            }
+        }
+        .state{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            font-size: 32px;
+            margin-left: 5px;
+            @include mobile-767{
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.container{
+    padding: 50px;
+    @include mobile-767{
+        padding: 50px 30px;
+    }
+    @include mobile-414{
+        padding: 50px 10px;
+    }
+    h2{
+        color: $span-color;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 50px;
+    }
+    .list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        li{
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            padding: 20px 10px;
+            margin-bottom: 20px;
+            
+            @include mobile-767{
+                width: 100%;
+                flex-wrap: wrap;
+                text-align: center;
+                padding: 10px 0;
+                margin-bottom: 50px;
+                position: relative;
+            }
+            @include mobile-414{
+                width: 95%;
+                padding-right: 20px;
+            }
+            .fa-times{
+                color: $red;
+                opacity: 0.6;
+                transition: all 0.2s;
+                &:hover{
+                    opacity: 1;
+                    transform:scale(1.5);
+                }
+                @include mobile-767{
+                    position: absolute;
+                    top: 45%;
+                    right: 0;
+                    transform:scale(1.5);
+                }
+            }
+            .state{
+                @include mobile-767{
+                    width: 100%;
+                }
+            }
+            p{
+                @include mobile-767{
+                    width: 33%;
+                    padding: 10px;
+                }
+                span{
+                    @include mobile-767{
+                        display: block;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            .date{
+                @include mobile-767{
+                    position: absolute;
+                    top: 10%;
+                    right: 0;
+                }
+            }
+        }
+    }
+    .delAll{
+        display: flex;
+        justify-content: center;
+        .delAllBtn{
+            width: 50%;
+            padding: 10px;
+            color: #000;
+            font-size: 24px;
+            background: $yellow;
+            font-weight: bold;
+            border: none;
+            transition: all 0.4s;
+            margin-top: 40px;
+            @include mobile-767{
+                width: 90%;
+                margin-top: auto;
+            }
+            &:hover{
+                background: $orange;
+                color: #FFF;
+            }
+        }
+    }
+}
+
+
+.footer{
+    background: $all-color;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    h1{
+        .grayscale{
+            width: 55px;
+            height: 55px;
+            background: url('../images/BMICLogo.png'); 
+            background-size: contain;
+            @include text-hidden;
+            filter: brightness(0.2);
+        }
+    }
+}
+
+
+
+
+.font-s {
+    font-size: 12px;
+    margin-right: 10px;
+    @include mobile-767{
+        margin-right: auto;
+    }
+}
+// li邊框顏色
+.blue-border {
+    border-left: 7px solid $blue;
+}
+.green-border {
+    border-left: 7px solid $green;
+}
+.orange-border {
+    border-left: 7px solid $orange;
+}
+.orange2-border {
+    border-left: 7px solid $orange2;
+}
+.red-border {
+    border-left: 7px solid $red;
+}
+// 按鈕顏色
+.blue-btn {
+    border: 6px solid $blue;
+}
+.green-btn {
+    border: 6px solid $green;
+}
+.orange-btn {
+    border: 6px solid $orange;
+}
+.orange2-btn {
+    border: 6px solid $orange2;
+}
+.red-btn {
+    border: 6px solid $red;
+}
+// 背景顏色
+.blue-bg {
+    background: $blue;
+}
+.green-bg {
+    background: $green;
+}
+.orange-bg {
+    background: $orange;
+}
+.orange2-bg {
+    background: $orange2;
+}
+.red-bg {
+    background: $red;
+}
+// 字體顏色
+.blue-text {
+    color: $blue;
+}
+.green-text {
+    color: $green;
+}
+.orange-text {
+    color: $orange;
+}
+.orange2-text {
+    color: $orange2;
+}
+.red-text {
+    color: $red;
+}

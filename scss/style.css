@@ -1,0 +1,583 @@
+@charset "UTF-8";
+@import url(//db.onlinewebfonts.com/c/344d17417b87d35e88d9df15bea12e2e?family=SFNSDisplay);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 讓圖片自適應容器最大寬度 高度自動 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 全域設定 border box */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*---------------------------------------*/
+/*圖片取代文字技巧*/
+/* RWD用 */
+@font-face {
+  font-family: "SFNSDisplay";
+  src: url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.eot");
+  src: url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.woff") format("woff"), url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/344d17417b87d35e88d9df15bea12e2e.svg#SFNSDisplay") format("svg");
+}
+
+/* 隱藏imput箭頭 */
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.wrap {
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: "SFNSDisplay";
+}
+
+.wrap a {
+  text-decoration: none;
+}
+
+.header {
+  background: #424242;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 70px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 914px) {
+  .header {
+    padding: 20px;
+  }
+}
+
+.header h1 {
+  margin: auto 10%;
+}
+
+@media (max-width: 767px) {
+  .header h1 {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 914px) {
+  .header h1 {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 40px;
+  }
+}
+
+.header h1 a {
+  width: 117px;
+  height: 117px;
+  background: url("../images/BMICLogo.png");
+  display: block;
+  text-indent: 101%;
+  /*首行縮排*/
+  overflow: hidden;
+  /*自動隱藏超出的文字或圖片*/
+  white-space: nowrap;
+  /*使元素在第一排上面，不斷行*/
+}
+
+.header .count-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 914px) {
+  .header .count-text {
+    width: 70%;
+  }
+}
+
+@media (max-width: 767px) {
+  .header .count-text {
+    margin-bottom: 10px;
+  }
+}
+
+.header .count-text label {
+  font-size: 18px;
+  color: #FFD366;
+  margin-bottom: 7px;
+}
+
+.header .count-text input {
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid #FFD366;
+  border-radius: 10px;
+  font-size: 24px;
+  width: 250px;
+  outline: none;
+  padding: 5px 15px;
+  margin-bottom: 15px;
+  color: #FFF;
+}
+
+@media (max-width: 914px) {
+  .header .count-text input {
+    width: 100%;
+  }
+}
+
+.header .result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 914px) {
+  .header .result {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.header .result .btn {
+  width: 120px;
+  height: 120px;
+  display: block;
+  text-align: center;
+  line-height: 120px;
+  border-radius: 100%;
+  background: #FFD366;
+  color: #424242;
+  font-size: 24px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header .result .btn:hover {
+  -webkit-box-shadow: 0 1px 6px 3px rgba(255, 195, 49, 0.64);
+          box-shadow: 0 1px 6px 3px rgba(255, 195, 49, 0.64);
+}
+
+@media (max-width: 767px) {
+  .header .result .btn {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.header .result .open-btn-border {
+  position: relative;
+  display: none;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.header .result .open-btn-border .BMI {
+  font-size: 32px;
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+
+.header .result .open-btn-border .BMI-text {
+  font-size: 14px;
+}
+
+.header .result .open-btn-border .open-btn {
+  padding: 8px;
+  position: absolute;
+  bottom: -6%;
+  right: 3%;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header .result .open-btn-border .open-btn .fas.fa-sync-alt {
+  color: #424242;
+}
+
+.header .result .open-btn-border .open-btn .fas.fa-sync-alt:hover {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header .result .state {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  opacity: 0;
+  font-size: 32px;
+  margin-left: 5px;
+}
+
+@media (max-width: 767px) {
+  .header .result .state {
+    margin-top: 10px;
+  }
+}
+
+.container {
+  padding: 50px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 50px 30px;
+  }
+}
+
+@media (max-width: 414px) {
+  .container {
+    padding: 50px 10px;
+  }
+}
+
+.container h2 {
+  color: #424242;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.container .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .list li {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 20px;
+  padding: 20px 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .container .list li {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 50px;
+    position: relative;
+  }
+}
+
+@media (max-width: 414px) {
+  .container .list li {
+    width: 95%;
+    padding-right: 20px;
+  }
+}
+
+.container .list li .fa-times {
+  color: #FF1200;
+  opacity: 0.6;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.container .list li .fa-times:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+@media (max-width: 767px) {
+  .container .list li .fa-times {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@media (max-width: 767px) {
+  .container .list li .state {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .container .list li p {
+    width: 33%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container .list li p span {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container .list li .date {
+    position: absolute;
+    top: 10%;
+    right: 0;
+  }
+}
+
+.container .delAll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .delAll .delAllBtn {
+  width: 50%;
+  padding: 10px;
+  color: #000;
+  font-size: 24px;
+  background: #FFD366;
+  font-weight: bold;
+  border: none;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+  .container .delAll .delAllBtn {
+    width: 90%;
+    margin-top: auto;
+  }
+}
+
+.container .delAll .delAllBtn:hover {
+  background: #FF982D;
+  color: #FFF;
+}
+
+.footer {
+  background: #FFD366;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+}
+
+.footer h1 .grayscale {
+  width: 55px;
+  height: 55px;
+  background: url("../images/BMICLogo.png");
+  background-size: contain;
+  display: block;
+  text-indent: 101%;
+  /*首行縮排*/
+  overflow: hidden;
+  /*自動隱藏超出的文字或圖片*/
+  white-space: nowrap;
+  /*使元素在第一排上面，不斷行*/
+  -webkit-filter: brightness(0.2);
+          filter: brightness(0.2);
+}
+
+.font-s {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+  .font-s {
+    margin-right: auto;
+  }
+}
+
+.blue-border {
+  border-left: 7px solid #31BAF9;
+}
+
+.green-border {
+  border-left: 7px solid #86D73F;
+}
+
+.orange-border {
+  border-left: 7px solid #FF982D;
+}
+
+.orange2-border {
+  border-left: 7px solid #FF6C02;
+}
+
+.red-border {
+  border-left: 7px solid #FF1200;
+}
+
+.blue-btn {
+  border: 6px solid #31BAF9;
+}
+
+.green-btn {
+  border: 6px solid #86D73F;
+}
+
+.orange-btn {
+  border: 6px solid #FF982D;
+}
+
+.orange2-btn {
+  border: 6px solid #FF6C02;
+}
+
+.red-btn {
+  border: 6px solid #FF1200;
+}
+
+.blue-bg {
+  background: #31BAF9;
+}
+
+.green-bg {
+  background: #86D73F;
+}
+
+.orange-bg {
+  background: #FF982D;
+}
+
+.orange2-bg {
+  background: #FF6C02;
+}
+
+.red-bg {
+  background: #FF1200;
+}
+
+.blue-text {
+  color: #31BAF9;
+}
+
+.green-text {
+  color: #86D73F;
+}
+
+.orange-text {
+  color: #FF982D;
+}
+
+.orange2-text {
+  color: #FF6C02;
+}
+
+.red-text {
+  color: #FF1200;
+}
+/*# sourceMappingURL=style.css.map */
