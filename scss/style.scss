@@ -265,6 +265,7 @@ input[type=number] {
             border: none;
             transition: all 0.4s;
             margin-top: 40px;
+            cursor: pointer;
             @include mobile-767{
                 width: 90%;
                 margin-top: auto;
